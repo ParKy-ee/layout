@@ -7,16 +7,61 @@ html body {
 }
 
 body {
-    height: 100vh;
-    background-color: var(--gray--light);
+    height: 400vh;
+    background-color: var(--gray--light)
 }
 
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.justify-start {
+    justify-content: start;
+}
+
+.justify-end {
+    justify-content: end;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.border-red {
+    border: 1px solid red;
+}
+
+.container-lg{
+    width: 100vw;
+    height: 100vh;
+    padding: 2em;
+}
+
+.container {
+    width: 50vw;
+    height: 50vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
 
 :root {
     --gold: #8E793E;
     --gold--light: #AD974F;
     --gray: #231f20;
     --gray--light: #EAEAEA;
+
 }
 
 p {
@@ -27,6 +72,40 @@ header {
     background-color: var(--gray);
     display: flex;
     color: var(--gold--light);
+}
+
+.header-nav {
+    margin-left: 1rem;
+    gap: 1em;
+    font-size: 1.5em;
+}
+
+.header-nav>a {
+    position: relative;
+    color: var(--gray--light);
+    text-decoration: none;
+    background-color: 0;
+    padding: 0.3em;
+    border-radius: 1em;
+}
+
+.header-nav>a::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    transition-duration: 0.3s;
+    background-color: var(--gold--light);
+}
+
+.header-nav>a:hover::after {
+    width: 100%;
+}
+
+.active {
+    background-color: #8E793E;
 }
 
 .bg {
@@ -47,23 +126,14 @@ header {
     height: 70vh;
     overflow: hidden;
     object-fit: cover;
-    border: 1px solid red;
     display: flex;
     align-items: center;
 }
 
-.container {
-    width: 50vw;
-    height: 50vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 1px solid red;
-}
+
 
 .main {
-    border: 1px solid red;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +142,6 @@ header {
 }
 
 .second {
-    border: 1px solid red;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -85,13 +154,18 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
 }
 
 .left>button {
-    width: 60%;
+    width: 80%;
     height: 30%;
 }
+
+.right>button {
+    width: 80%;
+    height: 30%;
+}
+
 
 .right {
     flex-grow: 1;
@@ -110,6 +184,7 @@ header {
     color: var(--gray--light);
 }
 
+
 .second>div>button::after {
     position: absolute;
     width: 0%;
@@ -122,15 +197,14 @@ header {
 }
 
 .second>div>button:hover::after {
-    background-color: #231f20;
+    background-color: var(--gray--light);
     width: 100%;
 }
 
-.right>button {
-    width: 60%;
-    height: 30%;
-}
 
+.second>div>button:hover {
+    color: var(--gray);
+}
 
 .main-text {
     position: relative;
@@ -143,7 +217,7 @@ header {
 
 .main-text>div>h1 {
     position: relative;
-    color: var(--gray);
+    color: var(--gray--light);
     font-size: 4rem;
     z-index: 20;
     transition-duration: 0.4s;
