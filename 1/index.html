@@ -6,22 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+
 </head>
 
 <body>
     <header class="flex ">
-        <h1 class="band">Logo band</h1>
-        <nav class=" flex justify-center items-center header-nav ">
-            <a class="links a-nav" href="">content1</a>
-            <a class="links a-nav" href="">content2</a>
-            <a class="links a-nav" href="">content3</a>
-        </nav>
+        <h4 class="band">Logo band</h5>
+            <nav class=" flex justify-center items-center header-nav ">
+                <a class="links a-nav" href="">content1</a>
+                <a class="links a-nav" href="">content2</a>
+                <a class="links a-nav" href="">content3</a>
+            </nav>
     </header>
     <div class="base  ">
+        <div data-aos="fade-right" class="option-detail">
+            <h6>detail</h6>
+            <p class="detail">
+
+            </p>
+            <p class="hide">close</p>
+        </div>
         <div class="bg ">
             <img class="" src="./public/background-main.jpg" alt="">
+
         </div>
-        <div class="container">
+        <div class="container ">
             <div class="main">
 
                 <a class="main-text" href="">
@@ -29,21 +43,39 @@
                 </a>
             </div>
             <div class="second">
-                <div class="left">
+                <div id="1" class="left a1">
                     <button>option1</button>
                 </div>
-                <div class="right">
+                <div id="2" class="right a1">
                     <button>option2</button>
                 </div>
             </div>
         </div>
     </div>
 
+
+    <!-- nav bar -->
+
+    <section class="flex justify-center mt-2">
+        <nav class="nav-tag flex  justify-space-between p-1">
+            <div class="nav-tag-item">
+                <h6>section1</h6>
+            </div>
+            <div class="nav-tag-item">
+                <h6>section2</h6>
+            </div>
+            <div class="nav-tag-item">
+                <h6>section3</h6>
+            </div>
+
+        </nav>
+    </section>
+
     <!-- second part -->
 
-    <div class="container-lg border-red flex justify-center ">
+    <div class="container-lg  flex justify-center ">
         <div class="fame justify-center flex  items-center">
-            <div class="main-pargarahp ">
+            <div data-aos="fade-up" class="main-pargarahp">
                 <h1>ABOUT</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
@@ -59,9 +91,9 @@
                     assumenda, nostrum quibusdam esse placeat delectus temporibus corporis laborum!
                 </p>
             </div>
-            <div class="second-paragrahp border-red">
+            <div data-aos="fade-left" class="second-paragrahp ">
                 <div class="top">
-                    <div class="second-paragrahp-item">
+                    <div class="second-paragrahp-item ">
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci numquam impedit
                             necessitatibus veritatis, cum ipsa omnis quo officiis, doloremque est ratione! Harum commodi
                             vero officia, quod laudantium debitis esse nam ipsam, quam quisquam necessitatibus alias!
@@ -71,18 +103,71 @@
                 </div>
                 <div class="bottom">
                     <div class="second-paragrahp-item">
-                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci numquam impedit
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci numquam impedit
                             necessitatibus veritatis, cum ipsa omnis quo officiis, doloremque est ratione! Harum commodi
                             vero officia, quod laudantium debitis esse nam ipsam, quam quisquam necessitatibus alias!
                             Quis aut praesentium ab nemo, dicta recusandae aspernatur repellendus. Est ducimus odio ipsa
                             minima dolorum?</p>
                     </div>
+
+                </div>
+                <div class="bottom">
+                    <div class="second-paragrahp-item">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci numquam impedit
+                            necessitatibus veritatis, cum ipsa omnis quo officiis, doloremque est ratione! Harum commodi
+                            vero officia, quod laudantium debitis esse nam ipsam, quam quisquam necessitatibus alias!
+                            Quis aut praesentium ab nemo, dicta recusandae aspernatur repellendus. Est ducimus odio ipsa
+                            minima dolorum?</p>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+
+    <!--  -->
+
+    <section class="container-lg flex justify-center items-center">
+        <div class="container-xl border-red dashboard">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+        <script>
+            const data = {
+                labels: ['Red', 'Blue', 'Yellow'],
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ],
+                    hoverOffset: 4
+                }]
+            };
+
+            const config = {
+                type: 'doughnut',
+                data: data,
+            };
+
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+        </script>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init()
+    </script>
+
 </body>
 
 </html>
